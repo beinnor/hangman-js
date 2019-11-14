@@ -1,4 +1,6 @@
-# Basic Webpack Setup
+# Basic Webpack Setup + babel & eslint
+
+With babel and eslint
 
 ## Usage
 
