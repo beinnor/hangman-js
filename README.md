@@ -1,6 +1,6 @@
 # Basic Webpack Setup + babel & eslint
 
-With babel and eslint
+With babel and eslint + prettier
 
 ## Usage
 
