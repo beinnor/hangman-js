@@ -7,10 +7,73 @@
       content="width=device-width, initial-scale=1.0"
     />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title><%= htmlWebpackPlugin.options.title %></title>
+    <title>Hangman JS</title>
   </head>
   <body>
-    <h1><%= htmlWebpackPlugin.options.title %></h1>
-    <div id="app"></div>
+    <div class="paper container">
+      <header class="row flex-center">
+        <h2 class="margin-none">Hangman JS</h2>
+      </header>
+      <main>
+        <h3 class="row flex-center" id="levelText"></h3>
+        <div class="row flex-center" id="gallow">
+          <svg>
+            <circle
+              cx="50"
+              cy="50"
+              r="40"
+              stroke="black"
+              stroke-width="4"
+              fill="white"
+            />
+          </svg>
+        </div>
+        <div class="row flex-center">
+          <div class="col-6 col center">
+            <h3>Word</h3>
+            <div id="word-output"></div>
+          </div>
+          <div class="col-6 col center">
+            <h3>Misses</h3>
+            <div id="misses-output"></div>
+          </div>
+        </div>
+        <div id="inputDiv" class="form-group row flex-center">
+          <div class="col-2 col align-middle">
+            <label for="charInput">Word: </label>
+          </div>
+          <div class="col-2 col align-middle">
+            <input
+              type="text"
+              name="charInput"
+              id="charInput"
+              maxlength="1"
+              size="1"
+              autofocus
+              required
+              autocomplete="off"
+            />
+          </div>
+          <div class="col-1 col align-middle">
+            <button type="submit">Enter</button>
+          </div>
+        </div>
+        <div id="gameOver" class="row flex-center">
+          <div class="col-4 col align-middle">
+            <h2 id="gameOverText">You win!</h2>
+          </div>
+          <div class="col-2 col align-middle">
+            <button id="gameOverButton">
+              Continue?
+            </button>
+          </div>
+        </div>
+      </main>
+      <footer class="row flex-center">
+        <p>
+          by <a href="http://beinnor.github.io/">Beinnor</a>, 2018
+        </p>
+      </footer>
+    </div>
   </body>
 </html>
