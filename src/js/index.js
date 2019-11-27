@@ -1,4 +1,5 @@
 import { getNewWord, drawMisses, drawWord } from './helpers';
+import { hideHangMan, drawHangMan } from './gallow';
 import '../css/paper.min.css';
 import '../css/style.css';
 
@@ -22,6 +23,7 @@ const initGame = lvl => {
   const levelText = document.querySelector('#levelText');
   gameOverDiv.style.display = 'none';
   levelText.textContent = `Level ${level}`;
+  hideHangMan();
 };
 
 const checkForWin = () => {
@@ -53,6 +55,7 @@ const checkLetter = letter => {
   } else {
     if (!misses.includes(letter)) {
       misses.push(letter);
+      drawHangMan(misses.length);
     }
     drawMisses(misses);
     if (misses.length > maxMisses) {

@@ -1,3 +1,7 @@
 .center {
   text-align: center;
 }
+
+#word-output span {
+  margin: 0.2rem;
+}

@@ -16,6 +16,10 @@ module.exports = {
         exclude: /node_modules/,
         use: ['babel-loader', 'eslint-loader'],
       },
+      {
+        test: /\.svg$/,
+        loader: 'svg-inline-loader?classPrefix',
+      },
     ],
   },
   resolve: {
