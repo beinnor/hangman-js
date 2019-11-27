@@ -33,7 +33,7 @@ module.exports = {
   ],
   output: {
     path: path.resolve(__dirname, '../', 'dist'),
-    publicPath: '/',
+    publicPath: '/hangman-js/',
     filename: 'bundle.js',
   },
   devServer: {
