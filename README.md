@@ -1,10 +1,5 @@
-# Basic Webpack Setup + babel & eslint
+# Hangman
 
-With babel and eslint + prettier
+HTML and vanilla JS.
 
-## Usage
-
-- cd basic-webpack-setup
-- npm install
-- npm start
-- visit http://localhost:8080/
+I made this for fun, and to try out Webpack.
