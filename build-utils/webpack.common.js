@@ -31,11 +31,6 @@ module.exports = {
       template: './src/index.html',
     }),
   ],
-  output: {
-    path: path.resolve(__dirname, '../', 'dist'),
-    publicPath: '/hangman-js/',
-    filename: 'bundle.js',
-  },
   devServer: {
     contentBase: './dist',
   },
