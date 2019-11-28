@@ -1,14 +1,17 @@
+import {
+  gallowContainer,
+  head,
+  face,
+  body,
+  leftArm,
+  rightArm,
+  leftLeg,
+  rightLeg,
+} from './domLoader';
+
 import svgImage from '../img/gallow_plain.svg';
 
-const gallowContainer = document.querySelector('.gallow');
 gallowContainer.innerHTML = svgImage;
-const head = document.querySelector('#head');
-const face = document.querySelector('#face');
-const body = document.querySelector('#body');
-const leftArm = document.querySelector('#arm_left');
-const rightArm = document.querySelector('#arm_right');
-const leftLeg = document.querySelector('#leg_left');
-const rightLeg = document.querySelector('#leg_right');
 
 export const hideHangMan = () => {
   head.style.visibility = 'hidden';
