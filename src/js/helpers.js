@@ -1,6 +1,6 @@
 import words from './words';
 
-const getRandomInt = max => {
+export const getRandomInt = max => {
   return Math.floor(Math.random() * Math.floor(max));
 };
 
