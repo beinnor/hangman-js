@@ -16,7 +16,7 @@ export const getNewWord = lvl => {
 };
 
 export const drawWord = (word, hits) => {
-  const wordDiv = document.querySelector('#word-output');
+  const wordDiv = document.querySelector('.correctLetters');
   wordDiv.innerHTML = '';
   word.forEach(letter => {
     const div = document.createElement('span');
@@ -30,6 +30,6 @@ export const drawWord = (word, hits) => {
 };
 
 export const drawMisses = misses => {
-  const missedDiv = document.querySelector('#misses-output');
+  const missedDiv = document.querySelector('.wrongLetters');
   missedDiv.innerText = misses;
 };

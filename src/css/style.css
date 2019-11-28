@@ -1,11 +1,3 @@
-.center {
-  text-align: center;
-}
-
-#word-output span {
-  margin: 0.2rem;
-}
-
-#gallowMan {
-  width: fit-content;
+.gallow {
+  width: 300px;
 }

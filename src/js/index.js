@@ -2,7 +2,7 @@ import { getNewWord, drawMisses, drawWord } from './helpers';
 import { hideHangMan, drawHangMan } from './gallow';
 import '../css/style.css';
 
-const gameOverDiv = document.querySelector('#gameOver');
+const gameOverDiv = document.querySelector('.gameOver');
 
 const maxMisses = 6;
 let level; // lvl 1 starts with 3 letter words, lvl 2 with 4 letter words and so on
@@ -18,9 +18,7 @@ const initGame = lvl => {
   gameOverDiv.style.display = 'none';
   drawWord(currentWord, hits);
   drawMisses(misses);
-  const levelText = document.querySelector('#levelText');
   gameOverDiv.style.display = 'none';
-  levelText.textContent = `Level ${level}`;
   hideHangMan();
 };
 
@@ -36,9 +34,9 @@ const checkLetter = letter => {
     drawWord(currentWord, hits);
     if (checkForWin()) {
       gameOverDiv.style.display = 'flex';
-      const gameoverText = document.querySelector('#gameOverText');
+      const gameoverText = document.querySelector('.gameOverText');
       const gameoverButton = document.querySelector(
-        '#gameOverButton',
+        '.gameOverButton',
       );
       gameoverText.innerText = 'You Win!';
       gameoverText.className = 'text-success';
@@ -57,9 +55,9 @@ const checkLetter = letter => {
     drawMisses(misses);
     if (misses.length > maxMisses) {
       gameOverDiv.style.display = 'flex';
-      const gameoverText = document.querySelector('#gameOverText');
+      const gameoverText = document.querySelector('.gameOverText');
       const gameoverButton = document.querySelector(
-        '#gameOverButton',
+        '.gameOverButton',
       );
       gameoverText.innerText = 'You Loose!';
       gameoverText.className = 'text-danger';

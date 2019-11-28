@@ -1,6 +1,6 @@
 import svgImage from '../img/gallow_plain.svg';
 
-const gallowContainer = document.querySelector('#gallow-container');
+const gallowContainer = document.querySelector('.gallow');
 gallowContainer.innerHTML = svgImage;
 const head = document.querySelector('#head');
 const face = document.querySelector('#face');
