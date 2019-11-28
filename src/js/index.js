@@ -1,9 +1,7 @@
 import { getNewWord, drawMisses, drawWord } from './helpers';
 import { hideHangMan, drawHangMan } from './gallow';
-// import '../css/paper.min.css';
 import '../css/style.css';
 
-const inputDiv = document.querySelector('#inputDiv');
 const gameOverDiv = document.querySelector('#gameOver');
 
 const maxMisses = 6;
@@ -18,7 +16,6 @@ const initGame = lvl => {
   misses = [];
   hits = [];
   gameOverDiv.style.display = 'none';
-  inputDiv.style.display = 'flex';
   drawWord(currentWord, hits);
   drawMisses(misses);
   const levelText = document.querySelector('#levelText');
@@ -39,7 +36,6 @@ const checkLetter = letter => {
     drawWord(currentWord, hits);
     if (checkForWin()) {
       gameOverDiv.style.display = 'flex';
-      inputDiv.style.display = 'none';
       const gameoverText = document.querySelector('#gameOverText');
       const gameoverButton = document.querySelector(
         '#gameOverButton',
@@ -61,7 +57,6 @@ const checkLetter = letter => {
     drawMisses(misses);
     if (misses.length > maxMisses) {
       gameOverDiv.style.display = 'flex';
-      inputDiv.style.display = 'none';
       const gameoverText = document.querySelector('#gameOverText');
       const gameoverButton = document.querySelector(
         '#gameOverButton',
@@ -77,12 +72,10 @@ const checkLetter = letter => {
   }
 };
 
-const charInput = document.getElementById('charInput');
-
-charInput.addEventListener('change', e => {
-  e.preventDefault();
-  checkLetter(e.target.value);
-  charInput.value = '';
+document.addEventListener('keydown', e => {
+  if (e.keyCode >= 65 && e.keyCode <= 90) {
+    checkLetter(e.key);
+  }
 });
 
 initGame(1);
