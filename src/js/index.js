@@ -3,13 +3,14 @@ import { hideHangMan, drawHangMan } from './gallow';
 import '../css/paper.min.css';
 import '../css/style.css';
 
+const inputDiv = document.querySelector('#inputDiv');
+const gameOverDiv = document.querySelector('#gameOver');
+
 const maxMisses = 6;
 let level; // lvl 1 starts with 3 letter words, lvl 2 with 4 letter words and so on
 let currentWord;
 let misses;
 let hits;
-const inputDiv = document.querySelector('#inputDiv');
-const gameOverDiv = document.querySelector('#gameOver');
 
 const initGame = lvl => {
   level = lvl;

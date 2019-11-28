@@ -5,3 +5,7 @@
 #word-output span {
   margin: 0.2rem;
 }
+
+#gallowMan {
+  width: fit-content;
+}

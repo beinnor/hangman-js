@@ -1,4 +1,7 @@
-/* eslint-disable import/prefer-default-export */
+import svgImage from '../img/gallow_plain.svg';
+
+const gallowContainer = document.querySelector('#gallow-container');
+gallowContainer.innerHTML = svgImage;
 const head = document.querySelector('#head');
 const face = document.querySelector('#face');
 const body = document.querySelector('#body');
