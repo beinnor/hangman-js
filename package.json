@@ -8,7 +8,7 @@
     "build": "webpack --config build-utils/webpack.config.js --env.env=prod",
     "build:analyze": "npm run build -- --env.addon=bundleanalyze --env.addon=bundlevisualizer",
     "deploy": "gh-pages -d dist",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "keywords": [],
   "author": "Ronnie Bjørkelund",
@@ -27,12 +27,14 @@
     "eslint-config-prettier": "^6.5.0",
     "eslint-loader": "^3.0.2",
     "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jest": "^23.0.5",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-prettier": "^3.1.1",
     "eslint-plugin-react": "^7.16.0",
     "eslint-plugin-react-hooks": "^1.7.0",
     "gh-pages": "^2.1.1",
     "html-webpack-plugin": "^3.2.0",
+    "jest": "^24.9.0",
     "prettier": "^1.19.1",
     "style-loader": "^1.0.0",
     "svg-inline-loader": "^0.8.0",
