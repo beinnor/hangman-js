@@ -1,6 +1,6 @@
 import { getNewWord, drawMisses, drawWord } from './helpers';
 import { hideHangMan, drawHangMan } from './gallow';
-import '../css/paper.min.css';
+// import '../css/paper.min.css';
 import '../css/style.css';
 
 const inputDiv = document.querySelector('#inputDiv');
