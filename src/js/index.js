@@ -5,6 +5,8 @@ import '../css/style.css';
 const gameOverText = document.querySelector('.gameOverText');
 const gameOverButton = document.querySelector('#gameOverButton');
 const gameOverDiv = document.querySelector('.gameOver');
+const keyBoard = document.querySelector('.keyboard');
+const keyBoardKeys = document.querySelectorAll('.keyboard__key');
 
 const maxMisses = 6;
 let level; // lvl 1 starts with 3 letter words, lvl 2 with 4 letter words and so on
@@ -17,10 +19,12 @@ const initGame = lvl => {
   currentWord = getNewWord(level);
   misses = [];
   hits = [];
-  gameOverDiv.style.visibility = 'hidden';
+  gameOverDiv.style.display = 'none';
+  keyBoard.style.display = 'block';
   drawWord(currentWord, hits);
   drawMisses(misses);
-  gameOverDiv.style.visibility = 'hidden';
+  gameOverDiv.style.display = 'none';
+  keyBoard.style.display = 'block';
   hideHangMan();
 };
 
@@ -35,7 +39,8 @@ const checkLetter = letter => {
     hits.push(letter);
     drawWord(currentWord, hits);
     if (checkForWin()) {
-      gameOverDiv.style.visibility = 'visible';
+      keyBoard.style.display = 'none';
+      gameOverDiv.style.display = 'flex';
       gameOverText.innerText = 'You Win!';
       gameOverButton.innerText = 'Continue?';
       gameOverButton.addEventListener('click', () => {
@@ -50,7 +55,8 @@ const checkLetter = letter => {
     }
     drawMisses(misses);
     if (misses.length > maxMisses) {
-      gameOverDiv.style.visibility = 'visible';
+      keyBoard.style.display = 'none';
+      gameOverDiv.style.display = 'flex';
       gameOverText.innerText = 'You Loose!';
       gameOverButton.innerText = 'Restart?';
       gameOverButton.addEventListener('click', () => {
@@ -64,6 +70,12 @@ document.addEventListener('keydown', e => {
   if (e.keyCode >= 65 && e.keyCode <= 90) {
     checkLetter(e.key);
   }
+});
+
+keyBoardKeys.forEach(key => {
+  key.addEventListener('click', e => {
+    checkLetter(e.target.innerText);
+  });
 });
 
 initGame(1);
