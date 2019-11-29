@@ -1,11 +1,10 @@
-import {
-  gameoverButton,
-  gameoverText,
-  gameOverDiv,
-} from './domLoader';
 import { getNewWord, drawMisses, drawWord } from './helpers';
 import { hideHangMan, drawHangMan } from './gallow';
 import '../css/style.css';
+
+const gameOverText = document.querySelector('.gameOverText');
+const gameOverButton = document.querySelector('#gameOverButton');
+const gameOverDiv = document.querySelector('.gameOver');
 
 const maxMisses = 6;
 let level; // lvl 1 starts with 3 letter words, lvl 2 with 4 letter words and so on
@@ -18,10 +17,10 @@ const initGame = lvl => {
   currentWord = getNewWord(level);
   misses = [];
   hits = [];
-  gameOverDiv.style.display = 'none';
+  gameOverDiv.style.visibility = 'hidden';
   drawWord(currentWord, hits);
   drawMisses(misses);
-  gameOverDiv.style.display = 'none';
+  gameOverDiv.style.visibility = 'hidden';
   hideHangMan();
 };
 
@@ -36,12 +35,10 @@ const checkLetter = letter => {
     hits.push(letter);
     drawWord(currentWord, hits);
     if (checkForWin()) {
-      gameOverDiv.style.display = 'flex';
-      gameoverText.innerText = 'You Win!';
-      gameoverText.className = 'text-success';
-      gameoverButton.innerText = 'Continue?';
-      gameoverButton.className = 'text-success';
-      gameoverButton.addEventListener('click', () => {
+      gameOverDiv.style.visibility = 'visible';
+      gameOverText.innerText = 'You Win!';
+      gameOverButton.innerText = 'Continue?';
+      gameOverButton.addEventListener('click', () => {
         level += 1;
         initGame(level);
       });
@@ -53,12 +50,10 @@ const checkLetter = letter => {
     }
     drawMisses(misses);
     if (misses.length > maxMisses) {
-      gameOverDiv.style.display = 'flex';
-      gameoverText.innerText = 'You Loose!';
-      gameoverText.className = 'text-danger';
-      gameoverButton.innerText = 'Restart?';
-      gameoverButton.className = 'text-danger';
-      gameoverButton.addEventListener('click', () => {
+      gameOverDiv.style.visibility = 'visible';
+      gameOverText.innerText = 'You Loose!';
+      gameOverButton.innerText = 'Restart?';
+      gameOverButton.addEventListener('click', () => {
         initGame(1);
       });
     }

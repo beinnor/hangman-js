@@ -1,3 +1,81 @@
+@import url('https://fonts.googleapis.com/css?family=Handlee&display=swap');
+
+body {
+  margin: 0;
+  height: 100vh;
+  font-size: calc(
+    14px + (26 - 14) * ((100vw - 300px) / (1600 - 300))
+  );
+  line-height: calc(
+    1.3em + (1.5 - 1.2) * ((100vw - 300px) / (1600 - 300))
+  );
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Handlee', cursive;
+}
+.header {
+  width: 100%;
+  text-align: center;
+  font-size: 2rem;
+}
+
+.footer {
+  width: 100%;
+  text-align: center;
+  font-size: 1rem;
+}
+
+.container {
+  height: 100vh;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.correctLetters {
+  text-align: center;
+  font-size: 2rem;
+}
+
+.correctLetters span {
+  margin: 1rem 2rem 1rem 2rem;
+}
+
+.wrongLetters {
+  text-decoration: line-through;
+  font-size: 2rem;
+  margin-top: 1rem;
+}
+
+.wrongLetters span {
+  margin: 1rem 1rem 1rem 1rem;
+}
+
 .gallow {
-  width: 300px;
+  width: 50vh;
+}
+
+.gameOver {
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+}
+
+button {
+  align-self: center;
+  font-family: 'Handlee', cursive;
+  background: transparent;
+  transition: all 0.5s ease;
+  font-size: 2rem;
+  outline: none;
+  box-shadow: 20px 38px 34px -26px hsla(0, 0%, 0%, 0.2);
+  border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+}
+
+button:hover {
+  box-shadow: 2px 8px 4px -6px hsla(0, 0%, 0%, 0.3);
 }

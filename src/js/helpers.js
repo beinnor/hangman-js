@@ -1,5 +1,7 @@
 import words from './words';
-import { wordDiv, missedDiv } from './domLoader';
+
+const wordDiv = document.querySelector('.correctLetters');
+const missedDiv = document.querySelector('.wrongLetters');
 
 export const getRandomInt = max => {
   return Math.floor(Math.random() * Math.floor(max));
@@ -30,5 +32,10 @@ export const drawWord = (word, hits) => {
 };
 
 export const drawMisses = misses => {
-  missedDiv.innerText = misses;
+  missedDiv.innerHTML = '';
+  misses.forEach(letter => {
+    const div = document.createElement('span');
+    div.innerText = letter;
+    missedDiv.appendChild(div);
+  });
 };
