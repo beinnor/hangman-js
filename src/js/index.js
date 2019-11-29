@@ -66,16 +66,20 @@ const checkLetter = letter => {
   }
 };
 
-document.addEventListener('keydown', e => {
-  if (e.keyCode >= 65 && e.keyCode <= 90) {
-    checkLetter(e.key);
-  }
-});
-
 keyBoardKeys.forEach(key => {
   key.addEventListener('click', e => {
-    checkLetter(e.target.innerText);
+    checkLetter(e.target.innerText.toLowerCase());
   });
+});
+
+document.addEventListener('keydown', e => {
+  if (e.keyCode >= 65 && e.keyCode <= 90) {
+    keyBoardKeys.forEach(key => {
+      if (key.innerText === e.key.toUpperCase()) {
+        key.click();
+      }
+    });
+  }
 });
 
 initGame(1);
