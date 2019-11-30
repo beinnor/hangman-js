@@ -1,14 +1,13 @@
 @import url('https://fonts.googleapis.com/css?family=Handlee&display=swap');
 
+:root {
+  font-size: calc(1vw + 1vh + 0.5vmin);
+  line-height: calc(1vw + 1vh + 0.5vmin);
+}
+
 body {
   margin: 0;
   height: 100vh;
-  font-size: calc(
-    14px + (26 - 14) * ((100vw - 300px) / (1600 - 300))
-  );
-  line-height: calc(
-    1.3em + (1.5 - 1.2) * ((100vw - 300px) / (1600 - 300))
-  );
   display: flex;
   flex-flow: column nowrap;
   justify-content: space-between;
@@ -51,7 +50,7 @@ body {
 
 .correctLetters {
   text-align: center;
-  font-size: 1rem;
+  font-size: 2rem;
   width: 80%;
   height: 2rem;
 }
@@ -62,7 +61,7 @@ body {
 
 .wrongLetters {
   text-decoration: line-through;
-  font-size: 1rem;
+  font-size: 2rem;
   margin-top: 1rem;
   width: 80%;
   text-align: center;
@@ -74,7 +73,7 @@ body {
 }
 
 .gallow {
-  width: 50vh;
+  width: 40vh;
 }
 
 .gameOver {
@@ -119,7 +118,8 @@ button--warning {
 }
 
 .keyboard__key {
-  font-size: 1rem;
+  font-size: 2rem;
+  margin: 0.2rem;
 }
 
 .keyboard__key--active {
