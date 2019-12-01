@@ -76,10 +76,10 @@ document.addEventListener('keydown', e => {
   if (e.keyCode >= 65 && e.keyCode <= 90) {
     keyBoardKeys.forEach(key => {
       if (key.innerText === e.key.toUpperCase()) {
-        key.classList.add('keyboard__key--active');
+        key.classList.toggle('keyboard__key--active');
         key.click();
         setTimeout(() => {
-          key.classList.remove('keyboard__key--active');
+          key.classList.toggle('keyboard__key--active');
         }, 100);
       }
     });
