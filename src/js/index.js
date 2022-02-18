@@ -14,7 +14,7 @@ let currentWord;
 let misses;
 let hits;
 
-const initGame = lvl => {
+const initGame = (lvl) => {
   level = lvl;
   currentWord = getNewWord(level);
   misses = [];
@@ -28,13 +28,9 @@ const initGame = lvl => {
   hideHangMan();
 };
 
-const checkForWin = () => {
-  return currentWord.every(letter => {
-    return hits.includes(letter);
-  });
-};
+const checkForWin = () => currentWord.every((letter) => hits.includes(letter));
 
-const checkLetter = letter => {
+const checkLetter = (letter) => {
   if (currentWord.includes(letter)) {
     hits.push(letter);
     drawWord(currentWord, hits);
@@ -66,15 +62,15 @@ const checkLetter = letter => {
   }
 };
 
-keyBoardKeys.forEach(key => {
-  key.addEventListener('click', e => {
+keyBoardKeys.forEach((key) => {
+  key.addEventListener('click', (e) => {
     checkLetter(e.target.innerText.toLowerCase());
   });
 });
 
-document.addEventListener('keydown', e => {
+document.addEventListener('keydown', (e) => {
   if (e.keyCode >= 65 && e.keyCode <= 90) {
-    keyBoardKeys.forEach(key => {
+    keyBoardKeys.forEach((key) => {
       if (key.innerText === e.key.toUpperCase()) {
         key.classList.toggle('keyboard__key--active');
         key.click();

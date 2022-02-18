@@ -22,7 +22,7 @@ export const hideHangMan = () => {
   rightLeg.style.visibility = 'hidden';
 };
 
-export const drawHangMan = misses => {
+export const drawHangMan = (misses) => {
   switch (misses) {
     case 1:
       head.style.visibility = 'visible';

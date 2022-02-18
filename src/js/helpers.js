@@ -3,24 +3,18 @@ import words from './words';
 const wordDiv = document.querySelector('.correctLetters');
 const missedDiv = document.querySelector('.wrongLetters');
 
-export const getRandomInt = max => {
-  return Math.floor(Math.random() * Math.floor(max));
-};
+export const getRandomInt = (max) => Math.floor(Math.random() * Math.floor(max));
 
-export const getNewWord = lvl => {
+export const getNewWord = (lvl) => {
   const wordSize = lvl + 2;
-  const possibleWords = words.filter(
-    word => word.length === wordSize,
-  );
+  const possibleWords = words.filter((word) => word.length === wordSize);
 
-  return Array.from(
-    possibleWords[getRandomInt(possibleWords.length)],
-  );
+  return Array.from(possibleWords[getRandomInt(possibleWords.length)]);
 };
 
 export const drawWord = (word, hits) => {
   wordDiv.innerHTML = '';
-  word.forEach(letter => {
+  word.forEach((letter) => {
     const div = document.createElement('span');
     if (hits.includes(letter)) {
       div.innerText = letter;
@@ -31,9 +25,9 @@ export const drawWord = (word, hits) => {
   });
 };
 
-export const drawMisses = misses => {
+export const drawMisses = (misses) => {
   missedDiv.innerHTML = '';
-  misses.forEach(letter => {
+  misses.forEach((letter) => {
     const div = document.createElement('span');
     div.innerText = letter;
     missedDiv.appendChild(div);
